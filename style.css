@@ -24,6 +24,7 @@ body
     display:grid;
     grid-template-columns: 80px 1.5fr 5fr;
 
+
  
   
    
@@ -113,9 +114,10 @@ i {
     
 }
 img {
-    width:100%;
-    height:100%;
-    border-radius:50%;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
 
 }
@@ -133,8 +135,8 @@ ul {
     
     margin-top:10px;
     background-color: rgb(255, 255, 255);
-    padding:10px;
-    border-radius: 20px;
+    padding:20px;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     
     
@@ -144,24 +146,19 @@ ul {
 .all-messages {
     
     margin:auto;
-    width:60%;
+    width:50%;
     display:flex;
     flex-direction: column;
     justify-content: start;
     padding:10px;
     color: white;
-    height: 500px;
-    overflow: scroll;
-
+    height: 1000px;
+    overflow-y: scroll;
+    padding:100px;
+  
  
 }
-.img-message-container {
-    position: absolute;
-    width:50px;
-    height:50px;
-    left:30em;
-    top:10em;
-}
+
 .left-message {
 
     position: relative;
@@ -179,6 +176,7 @@ ul {
 }
 
 .right-message {
+    position: relative;
     flex:1;
     width:fit-content;
     padding:20px;
@@ -191,6 +189,7 @@ ul {
 .messages-nav {
     display:flex;
     justify-content: end;
+    align-items: center;
     padding:20px;
     background-color: rgb(137, 59, 211);
 }
@@ -199,7 +198,7 @@ ul {
 
 display:grid;
 grid-template-columns: 1fr;
-grid-template-rows: 100px;;
+grid-template-rows: 100px auto 80px;;
 
   
 }
@@ -237,12 +236,16 @@ li {
 input {
   
     width:100%;
-    min-height: 50%;;
+    min-height:100%;
 
+    padding:10px;
 }
 .send-message {
 
-    min-height:80px;
+ 
+    padding:10px;
+    min-height:100%;
+margin:auto;
     display:flex;
   
  
@@ -260,19 +263,28 @@ button
 
 
 .footer {
-
-
-
-
-    
+height:100%; 
  position: relative;
-
-
 background-color: rgb(251, 241, 251);
     
-  
+}
 
-
+.profile-pic-sender {
     
+    position: absolute;
+    left:-70px;
+    top:0;
+
+    object-fit: cover;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 10%;
   
+
+    background-color: antiquewhite;
+}
+.message-icon {
+    font-size: 50px;
+    filter: invert(1);
 }
