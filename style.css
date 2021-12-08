@@ -15,13 +15,17 @@ body
     height:100%;
     width:100%;
     font-family: 'Roboto', sans-serif;
+
     
 }
 .grid-container {
     width:100%;
-    height:100vh;
+    height:100%;
     display:grid;
     grid-template-columns: 80px 1.5fr 5fr;
+
+ 
+  
    
 }
 .logo {
@@ -60,7 +64,7 @@ i {
 
     background-color: purple;
  
-    height:100vh;
+    height:auto;
     display:flex;
   
     flex-direction: column;
@@ -68,8 +72,9 @@ i {
     justify-content: space-between;
     align-items: center;
  
-    grid-row: 1/ -4;
 
+    
+ 
 
 
     
@@ -83,7 +88,7 @@ i {
     padding:20px;
     
     background-color: rgb(82, 20, 139);
-    grid-row: 1/ -4;
+    
 }
 
 .profile-pic-container {
@@ -137,14 +142,18 @@ ul {
 
 
 .all-messages {
+    
     margin:auto;
     width:60%;
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     padding:10px;
     color: white;
-    height: 93%;
+    height: 500px;
+    overflow: scroll;
+
+ 
 }
 .img-message-container {
     position: absolute;
@@ -177,16 +186,22 @@ ul {
     border-radius: 10px;
 }
 
-input {
-    width:100%;
-    padding:20px;
-}
+
 
 .messages-nav {
     display:flex;
     justify-content: end;
     padding:20px;
     background-color: rgb(137, 59, 211);
+}
+.messages {
+
+
+display:grid;
+grid-template-columns: 1fr;
+grid-template-rows: 100px;;
+
+  
 }
 .messages-nav ul {
 
@@ -218,17 +233,19 @@ li {
         display:none;
     }
 }
-.footer {
 
-    background-color: rgb(180, 23, 194);
-    width:100%;
-
-   
-
+input {
   
+    width:100%;
+    min-height:100%;
+
 }
 .send-message {
+
+    min-height:100%;
     display:flex;
+  
+ 
 }
 button 
 {
@@ -237,4 +254,25 @@ button
     background-color: rgb(208, 16, 226);
     border:none;
     width:20%;  
+}
+
+
+
+
+.footer {
+
+
+
+
+    
+ position: relative;
+
+
+background-color: rgb(180, 23, 194);
+    
+  
+
+
+    
+  
 }
