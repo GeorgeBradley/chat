@@ -145,16 +145,18 @@ ul {
 
 .all-messages {
     
-    margin:auto;
-    width:50%;
+  
+  
     display:flex;
     flex-direction: column;
     justify-content: start;
-    padding:10px;
-    color: white;
-    height: 1000px;
-    overflow-y: scroll;
     padding:100px;
+    color: white;
+
+
+    height:1000px;
+
+    overflow-y: scroll;
   
  
 }
@@ -168,7 +170,7 @@ ul {
 
     flex:1;
 
-    margin-top:10px;
+    margin-top:20px;
     padding:20px;
     background-color: blue;
     border-radius: 10px;
@@ -176,6 +178,7 @@ ul {
 }
 
 .right-message {
+    margin-top:20px;
     position: relative;
     flex:1;
     width:fit-content;
@@ -227,11 +230,6 @@ margin-left:auto;
 li {
     list-style-type: none;
 }
-@media (max-width:768px){
-    .chats {
-        display:none;
-    }
-}
 
 input {
   
@@ -269,7 +267,22 @@ background-color: rgb(251, 241, 251);
     
 }
 
-.profile-pic-sender {
+.left-message .profile-pic-sender {
+    
+    position: absolute;
+    right:-70px;
+    top:0;
+
+    object-fit: cover;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 10%;
+  
+
+    background-color: antiquewhite;
+}
+.right-message .profile-pic-sender {
     
     position: absolute;
     left:-70px;
@@ -287,4 +300,65 @@ background-color: rgb(251, 241, 251);
 .message-icon {
     font-size: 50px;
     filter: invert(1);
+}
+
+
+.menu-toggle {
+  
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+}
+ 
+.menu-toggle > span  {
+    display:none; 
+    width: 29px;
+height:3px;
+
+    background-color: beige;
+ 
+}
+
+
+@media (max-width:1024px) {
+    .chats {
+        display:none;
+    }
+
+    .messages {
+        grid-column: 2 / 5;
+    }
+    .all-messages {
+    
+        margin:auto;
+        width:100%;
+    }
+    ul.messages-nav-items{
+
+        display:none;
+
+    }
+    .menu-toggle span {
+        display:block;
+    }
+    .left-message .profile-pic-sender {
+    
+      
+    
+        width:40px;
+        height: 40px;
+     
+      
+    
+
+    }
+    .right-message .profile-pic-sender {
+        
+    
+    
+        width:40px;
+        height: 40px;
+
+    }
 }
