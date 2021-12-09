@@ -212,8 +212,30 @@ ul {
     border-radius: 5px;
 }
 
+.message-info {
+    display:flex;
+    gap:4px;
+    padding-bottom:0.2em;
+    position: relative;
+}
+.message-info .reaction {
+    
+    font-size: 0.7em;
+    position: absolute;
+    top:-14px;
+   
+    right:-8px;
+}
+.message-info .name-of-sender {
+   font-weight: bold;
+    font-size:0.62em;
 
+}
 
+.message-info .time-sent {
+   
+    font-size:0.62em;
+}
 .messages-nav {
     display:flex;
     justify-content: end;
