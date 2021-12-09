@@ -213,18 +213,22 @@ ul {
 }
 
 .message-info {
+ 
     display:flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: end    ;
+
     gap:4px;
     padding-bottom:0.2em;
-    position: relative;
+
 }
 .message-info .reaction {
-    
+    margin-left:auto;
+    padding:0;
     font-size: 0.7em;
-    position: absolute;
-    top:-14px;
    
-    right:-8px;
+   
 }
 .message-info .name-of-sender {
    font-weight: bold;
@@ -338,7 +342,7 @@ margin:auto;
     border-radius: 10%;
   
 
-    background-color: antiquewhite;
+ 
 }
 .right-message .profile-pic-sender {
     
@@ -353,7 +357,7 @@ margin:auto;
     border-radius: 10%;
   
 
-    background-color: antiquewhite;
+    
 }
 .message-icon {
     font-size: 50px;
@@ -397,7 +401,7 @@ height:3px;
         border-radius: 10%;
       
     
-        background-color: antiquewhite;
+
     }
     .right-message .profile-pic-sender {
         
@@ -412,7 +416,7 @@ height:3px;
         border-radius: 10%;
       
     
-        background-color: antiquewhite;
+     
     }
     
 }
@@ -500,7 +504,7 @@ height:3px;
         border-radius: 10%;
       
     
-        background-color: antiquewhite;
+   
     }
     .right-message .profile-pic-sender {
         
@@ -515,7 +519,7 @@ height:3px;
         border-radius: 10%;
       
     
-        background-color: antiquewhite;
+     
     }
     .all-messages {
     
