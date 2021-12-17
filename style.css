@@ -56,25 +56,27 @@ a {
     align-items: center;
     justify-content: center;
  
-    padding-top:20px;
+    padding:10px;
     list-style-type: none;
 }
 
 i {
-    padding:10px;
+padding:5px;
 }
 .dashboard-nav {
 
+    padding:10px;
+    display:flex;
     background-color: purple;
  
  
-   
-    display:flex;
+   align-items: center;
+justify-content: space-between;
   
     flex-direction: column;
   
-    justify-content: space-evenly;
-    align-items: center;
+ 
+  
  
     
 
@@ -87,26 +89,72 @@ i {
 
 .dashboard-items {
 
-    margin-bottom:auto;
+
     
 }
 
 .chats {
-    display:flex;
+   
+    display:grid;
+    grid-template-columns: fit-content;
+    grid-template-rows: 100px auto;
     flex-direction: column;
     
- 
-    padding:20px;
+
+   
     
     background-color: rgb(82, 20, 139);
     
 }
+.chats-header {
+    
+    padding:20px;
+    width:100%;
+    height:100%;
 
+    display:flex;
+    align-items: center;
+  
+    background-color: rgb(82, 20, 139);
+    color:white;
+}
+
+.all-chats {
+    grid-column:  1/ -1;
+    grid-row: 2;
+ 
+    height:0vh;
+    max-height:100%;
+    
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:20px;
+    
+    overflow:auto;
+    max-height:0vh;
+
+    min-height:100%;
+   
+}
+.all-chats::-webkit-scrollbar {
+    width: 6px;      
+}  
+.all-chats::-webkit-scrollbar-track {
+    background-color: rgb(82, 20, 139);      /* color of the tracking area */
+   
+  }
+  .all-chats::-webkit-scrollbar-thumb {
+      background-color: rgb(246, 246, 246);
+      border-radius: 5px;
+      border:1px solid rgb(82, 20, 139);      /* color of the tracking area */
+   
+
+  }
 .profile-pic-container {
-    margin-top:10px;
+   
     width:65px;
     position: relative;
-    margin-bottom:auto;
+    
 }
 
 .profile-pic-container::after {
@@ -114,12 +162,12 @@ i {
     position: absolute;
     width:15px;
     height:15px;
-    background-color: rgb(35, 216, 11);
+    background-color: rgb(236, 155, 5);
     border-radius: 50%;
     z-index:100;
     bottom:0;
     left:50px;
-    border:2px solid black;
+    border:2px solid purple;
 
     
     
@@ -133,15 +181,7 @@ img {
 
 }
 
-ul {
-    
-    
-   
-   
-   
-    
-    
-}
+
 .chat-box {
     
     margin-top:10px;
@@ -149,16 +189,60 @@ ul {
     padding:20px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-   display:flex;
-   gap:10px;
-    
+    display:flex;
+    gap:10px;  
+   
+}
+.chat-box:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 300ms ease-in-out;
 }
 .chat-box-img-container {
     width:70px;
     height:70px;
     object-fit: cover;
+    position: relative;
+    
+}
+.chat-box-img-container::after {
+    content:'';
+    width:14px;
+    height:14px;
+   
+    right:5px;
+    bottom:0;
+    position: absolute;
+    
+    border-radius: 50%;
+
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.active {
+    
+}
+.chat-box-img-container.active::after {
+    
+    background-color: rgb(59, 209, 0);
 
 }
+.chat-box-img-container.idle::after {
+    
+    background-color: rgb(228, 156, 24);
+ 
+}
+.chat-box-img-container.busy::after {
+    
+    background-color: rgb(245, 8, 8);
+ 
+}
+.chat-box-img-container.offline::after {
+    
+    background-color: rgb(255, 255, 255);
+    border: 0.05em solid rgb(17, 13, 13);
+}
+
 
 
 .all-messages {
@@ -166,24 +250,45 @@ ul {
   
 
  
-    padding-left:100px;
-    padding-right:100px;
+  
+    padding-right:40px;
+    padding-left:60px;
     color: white;
 
 
-    height:40vh;
+    max-height:0vh;
 
     min-height:100%;
     overflow-y: scroll;
     grid-column: 2 / 1  ;
   
     grid-row: 2  / 3;
+    padding-bottom:10px;
+
+    padding-top:10px;
+    display:flex; 
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-direction: column-reverse;
     
- 
-    padding-bottom: 10px;
 }
 
+.all-messages::-webkit-scrollbar {
+    width: 6px;      
+}  
+.all-messages::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);        /* color of the tracking area */
+   
+  }
+  .all-messages::-webkit-scrollbar-thumb {
+      background-color: rgb(54, 54, 192);
+      border-radius: 5px;
+      border:1px solid white;
+
+  }
 .left-message {
+
+    margin-top:20px;
 
     position: relative;
     width:fit-content;
@@ -192,7 +297,7 @@ ul {
 
     flex:1;
 
-    margin-top:20px;
+  
     padding: 8px;
     background-color: rgb(192, 51, 248);
     border-radius: 5px;
@@ -200,7 +305,7 @@ ul {
 }
 
 .right-message {
-    margin-top:20px;
+ 
     position: relative;
     flex:1;
     width:fit-content;
@@ -210,6 +315,28 @@ ul {
 
     color:black;
     border-radius: 5px;
+    margin-top:20px;
+
+}
+
+.react {
+    position: absolute;
+    font-size:.8em;
+    
+    top:-24px;
+    right:0;
+    z-index:1;
+    background-color: rgb(255, 255, 255);
+    border-radius:20px;
+    padding:5px;
+  width:fit-content;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  
+}
+.all-messages .right-message:nth-child(1){
+
+    position: relative;
+
 }
 
 .message-info {
@@ -252,7 +379,7 @@ ul {
  
 display:grid;
 grid-template-columns: 1fr;
-grid-template-rows: 100px auto 80px;;
+grid-template-rows: 100px auto 80px;
 
   
 }
@@ -308,42 +435,66 @@ button
 
 
 
-.footer {
+.footer 
+{
     display:flex;
-    
-max-height:100%; 
- position: relative;
-background-color: rgb(251, 241, 251);
-    
+    position: relative;
 }
-.send-message {
-
- 
-    padding:10px;
-
+.send-message 
+{
+    padding-left:5px;
+    padding-right:5px;
+    padding-bottom:5px;
     width:100%;
-margin:auto;
+    height:100%;
     display:flex;
-  
- 
+    align-items: center;
 }
 
-.left-message .profile-pic-sender {
-    
+.left-message .profile-pic-sender {  
     position: absolute;
     right:-70px;
-    
     top:0;
-
     object-fit: cover;
-
     width: 60px;
     height: 60px;
     border-radius: 10%;
-  
+}
 
+.left-message .profile-pic-sender::after, .right-message .profile-pic-sender::after{
+    content:'';
+    width:12px;
+    height:12px;
+    right:3px;
+    bottom:0;
+    position: absolute;  
+    border-radius: 50%;
+    background-color: aqua;
+    border: 0.09em solid rgb(255, 255, 255);
+    
+}
+.left-message .profile-pic-sender.active::after, .right-message .profile-pic-sender.active::after {
+    
+    background-color: rgb(59, 209, 0);
+
+}
+.left-message .profile-pic-sender.active::after, .right-message .profile-pic-sender.idle::after {
+    
+    background-color: rgb(228, 156, 24);
  
 }
+.left-message .profile-pic-sender.active::after, .right-message .profile-pic-sender.busy::after {
+    
+    background-color: rgb(245, 8, 8);
+ 
+}
+.left-message .profile-pic-sender.active::after, .right-message .profile-pic-sender.offline::after {
+    
+    background-color: rgb(255, 255, 255);
+    border: 0.05em solid rgb(17, 13, 13);
+}
+
+
 .right-message .profile-pic-sender {
     
     position: absolute;
@@ -367,7 +518,7 @@ margin:auto;
 
 .menu-toggle {
   
-    padding:20px;
+    
     display:flex;
     flex-direction: column;
     gap:5px;
@@ -375,46 +526,50 @@ margin:auto;
  
 .menu-toggle > span  {
     display:none; 
-    width: 29px;
-height:3px;
+    width: 26px;
+height:2px;
 
     background-color: beige;
  
 }
 
 @media (min-width:768px) {
-
-
-    .all-messages {
-        width:80%;;
-        margin:auto;
-    }
-    .left-message .profile-pic-sender {
-        position: absolute;
-        right:-27px;
-        top:18px;
     
-        object-fit: cover;
-    
-        width: 25px;
-        height: 25px;
-        border-radius: 10%;
+    .dashboard-nav {
+
+     
       
+      
+font-size:0.9em;
+      
+     
+        
     
-
+        
+     
+    
+    
+        
     }
+    .all-messages {
+       
+        width:80%;;
+        margin-left:auto;
+        font-size: 1.5em;
+    }
+  
     .right-message .profile-pic-sender {
         
         position: absolute;
-        left:-29px;
+        left:-60px;
         top:10px;
     
         object-fit: cover;
     
-        width: 25px;
-        height: 25px;
+        width: 50px;
+        height: 50px;
         border-radius: 10%;
-      
+     
     
      
     }
@@ -423,7 +578,8 @@ height:3px;
 @media (max-width:1024px) {
 
     .messages-nav {
-        height:60px;
+        height:100%;
+        
         font-size:0.8em;
         flex-shrink:0;
         
@@ -449,7 +605,7 @@ height:3px;
 
     .messages {
         grid-template-rows: 60px auto 80px;;
-        grid-column: 2 / 5;
+        grid-column: 2 / -1;
     }
     .messages-nav {
         justify-content: space-between;
@@ -492,20 +648,6 @@ height:3px;
     }
 
 
-    .left-message .profile-pic-sender {
-        position: absolute;
-        right:-27px;
-        top:18px;
-    
-        object-fit: cover;
-    
-        width: 25px;
-        height: 25px;
-        border-radius: 10%;
-      
-    
-   
-    }
     .right-message .profile-pic-sender {
         
         position: absolute;
@@ -529,4 +671,86 @@ height:3px;
         padding-left:40px;
         padding-right: 20px;
     }
+
+    
+.left-message .profile-pic-sender::after, .right-message .profile-pic-sender::after{
+    content:'';
+    width:7px;
+    height:7px;
+    right:3px;
+    bottom:0;
+    position: absolute;  
+    border-radius: 50%;
+    background-color: aqua;
+    border: 0.05em solid rgb(255, 255, 255);
+    
 }
+}
+
+.display-none {
+    display:none;
+}
+/* Login form */
+
+/* .login-form-container {
+
+    width:100%;
+    height:100%;
+   
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+  
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+    padding:30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+
+}
+
+.login-form a {
+    color:black;
+}
+.row {
+    width:100%;
+    height:100%;
+    display:flex;
+
+    align-items: center;
+    justify-content: center;
+    
+}
+.row button {
+    width:100%;
+    padding:10px;
+}
+.col {
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    padding:10px;
+    
+}
+
+.together input {
+   
+    width:fit-content;
+    
+}
+
+.together label {
+    font-size:0.7em;
+}
+
+.together p {
+    font-size:0.7em;
+}
+
+a {
+    font-size:0.7em;
+} */
